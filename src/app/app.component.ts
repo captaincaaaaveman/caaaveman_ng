@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MarkdownToHtmlModule } from 'ng2-markdown-to-html';
 
 @Component({
   selector: 'app-root',
