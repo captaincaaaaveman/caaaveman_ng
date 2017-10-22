@@ -7,5 +7,5 @@ import { MarkdownToHtmlModule } from 'ng2-markdown-to-html';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Caaaveman works!';
+  title = 'Caaaveman Blog';
 }
