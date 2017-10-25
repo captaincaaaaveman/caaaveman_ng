@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, RequestOptions } from '@angular/http';
-//import { environment } from '../../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -9,9 +9,8 @@ import { BlogEntry } from '../domain/blog-entry';
 @Injectable()
 export class BlogService {
   
-//  private backendUrl = `${environment.backendUrl}`;
+ private backendUrl = `${environment.backendUrl}`;
 //  private backendUrl = `http://localhost:8080`;
-  private backendUrl = `https://whispering-harbor-28355.herokuapp.com`;
 
   constructor(private http: Http) { }
 
