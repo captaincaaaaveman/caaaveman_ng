@@ -15,7 +15,7 @@ export class BlogService {
   constructor(private http: Http) { }
 
   getBlogEntry(): Promise<BlogEntry> {
-    const url = `${this.backendUrl}/markdown`;
+    const url = `${this.backendUrl}/blog`;
     console.log('Looking up ', url); 
     return this.http.get(url, this.getRequestOptions())
                .toPromise()
@@ -25,6 +25,16 @@ export class BlogService {
                 } );
   }
 
+  getBlogEntries(): Promise<BlogEntry[]> {
+    const url = `${this.backendUrl}allBlogs`;
+    console.log('Looking up ', url); 
+    return this.http.get(url, this.getRequestOptions())
+               .toPromise()
+               .then( response => {
+                 console.log(response);
+                 return response.json() as BlogEntry[];
+                } );
+  }
 
   getRequestOptions(): RequestOptions {
     let headers = new Headers();

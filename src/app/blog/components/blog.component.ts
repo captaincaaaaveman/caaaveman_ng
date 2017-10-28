@@ -18,6 +18,8 @@ export class BlogComponent implements OnInit {
 
   blog: BlogEntry;
 
+  blogs: BlogEntry[];
+
   getTags(): String[] {
     return this.tags;
   }
@@ -41,6 +43,14 @@ export class BlogComponent implements OnInit {
            this.blog = blog;
         }
      );
+
+    this.blogService.getBlogEntries().then( 
+       blogs => {
+           console.log( `Replacing `,this.blogs, `with `, blogs );
+           this.blogs = blogs;
+        }
+     );
+
   }
 
 }
