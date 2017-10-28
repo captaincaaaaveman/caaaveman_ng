@@ -26,7 +26,7 @@ export class BlogService {
   }
 
   getBlogEntries(): Promise<BlogEntry[]> {
-    const url = `${this.backendUrl}allBlogs`;
+    const url = `${this.backendUrl}/allBlogs`;
     console.log('Looking up ', url); 
     return this.http.get(url, this.getRequestOptions())
                .toPromise()
